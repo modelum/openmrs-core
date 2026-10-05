@@ -1,0 +1,5 @@
+OpenMRS_rename_visit operations
+
+USING OpenMRS:1
+
+RENAME ENTITY Visit TO Appointment
