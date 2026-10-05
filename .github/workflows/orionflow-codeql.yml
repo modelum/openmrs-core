@@ -47,26 +47,6 @@ jobs:
         if: steps.extract_file.outputs.run == 'false'
         run: echo "No valid .orion file found — skipping."
 
-      - name: Clean old generated queries
-        if: steps.extract_file.outputs.run == 'true'
-        run: rm -rf .github/codeql/queries/*
-
-      - name: Generate CodeQL queries
-        if: steps.extract_file.outputs.run == 'true'
-        run: |
-          echo "Generating queries for ${{ steps.extract_file.outputs.script }}"
-          java --add-opens java.base/java.lang=ALL-UNNAMED \
-               -jar .github/codeql/generator.jar \
-               -i "${{ steps.extract_file.outputs.script }}" \
-               -o .github/codeql/queries
-
-      - name: Commit generated queries
-        if: steps.extract_file.outputs.run == 'true'
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: "chore: update CodeQL queries from ${{ steps.extract_file.outputs.script }}"
-          file_pattern: ".github/codeql/queries/**"
-
       - name: Initialize CodeQL
         if: steps.extract_file.outputs.run == 'true'
         uses: github/codeql-action/init@v4
