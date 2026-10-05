@@ -1,8 +1,8 @@
 /**
  * Performance test for RENAME ENTITY:
- * entity declaration + JPA associations
+ * declaration + JPA associations + annotated queries
  *
- * @name Renamed Entity - declaration and associations
+ * @name Renamed Entity - declaration associations and queries
  * @kind alert
  * @problem.severity warning
  * @id java/orion/entity-renamed/0
@@ -33,6 +33,30 @@ where
       message =
         "Field '" + field.getName() +
         "' references old entity name '" + oldEntity.getName() +
+        "' which will be renamed to '" + newName + "'."
+    )
+
+    or
+
+    exists(Annotation q |
+      isQuery(q) and
+      usesOldEntity(q.getValue("value"), oldEntity) and
+      usageLoc = q.getTarget().getLocation() and
+      message =
+        "Query uses old entity name '" + oldEntity.getName() +
+        "' which will be renamed to '" + newName + "'."
+    )
+
+    or
+
+    exists(Annotation nq, Annotation q |
+      isNamedQuery(nq) and
+      isQuery(q) and
+      isEqual(nq.getValue("name"), q.getValue("name")) and
+      usesOldEntity(nq.getValue("query"), oldEntity) and
+      usageLoc = q.getTarget().getLocation() and
+      message =
+        "Named query uses old entity name '" + oldEntity.getName() +
         "' which will be renamed to '" + newName + "'."
     )
   )
