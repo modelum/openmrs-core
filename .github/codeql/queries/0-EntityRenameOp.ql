@@ -1,7 +1,8 @@
 /**
- * Minimal performance test for RENAME ENTITY
+ * Performance test for RENAME ENTITY:
+ * entity declaration + JPA associations
  *
- * @name Renamed Entity - minimal test
+ * @name Renamed Entity - declaration and associations
  * @kind alert
  * @problem.severity warning
  * @id java/orion/entity-renamed/0
@@ -15,8 +16,25 @@ where
   oldEntity.hasName("Visit") and
   isEntity(oldEntity) and
   newName = "Appointment" and
-  usageLoc = oldEntity.getLocation() and
-  message =
-    "Entity '" + oldEntity.getName() +
-    "' will be renamed to '" + newName + "'."
+  (
+    (
+      usageLoc = oldEntity.getLocation() and
+      message =
+        "Entity '" + oldEntity.getName() +
+        "' will be renamed to '" + newName + "'."
+    )
+
+    or
+
+    exists(Field field |
+      field.getType().getName() = oldEntity.getName() and
+      hasJpaAssociationTo(field) and
+      usageLoc = field.getLocation() and
+      message =
+        "Field '" + field.getName() +
+        "' references old entity name '" + oldEntity.getName() +
+        "' which will be renamed to '" + newName + "'."
+    )
+  )
+
 select usageLoc, message
