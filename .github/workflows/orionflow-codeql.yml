@@ -67,3 +67,7 @@ jobs:
         with:
           category: "/language:java-kotlin-orionflow"
           output: results.sarif
+      - name: Count OrionFlow results
+        run: |
+          echo "Number of OrionFlow results:"
+          jq '[.runs[].results[]?] | length' results.sarif/java.sarif
