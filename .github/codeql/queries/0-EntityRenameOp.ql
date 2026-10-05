@@ -1,8 +1,8 @@
 /**
  * Performance test for RENAME ENTITY:
- * declaration + JPA associations + @Query
+ * declaration + JPA associations + @Query detection only
  *
- * @name Renamed Entity - declaration associations and Query
+ * @name Renamed Entity - declaration associations and Query detection
  * @kind alert
  * @problem.severity warning
  * @id java/orion/entity-renamed/0
@@ -40,11 +40,8 @@ where
 
     exists(Annotation q |
       isQuery(q) and
-      usesOldEntity(q.getValue("value"), oldEntity) and
       usageLoc = q.getTarget().getLocation() and
-      message =
-        "Query uses old entity name '" + oldEntity.getName() +
-        "' which will be renamed to '" + newName + "'."
+      message = "Spring Data @Query annotation found."
     )
   )
 
