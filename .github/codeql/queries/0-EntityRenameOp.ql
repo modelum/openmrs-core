@@ -41,7 +41,15 @@ where
     exists(Annotation q, StringLiteral queryLiteral |
       isQuery(q) and
       queryLiteral = q.getValue("value") and
-      usesOldEntity(queryLiteral, oldEntity) and
+      (
+      queryLiteral.getValue().regexpMatch(
+        "(?i).*\\b(FROM|UPDATE|DELETE\\s+FROM)\\s+Visit\\b.*"
+      )
+      or
+      queryLiteral.getValue().regexpMatch(
+        "(?i).*\\bJOIN\\s+(?:FETCH\\s+)?Visit\\b.*"
+      )
+) and
       usageLoc = q.getTarget().getLocation() and
       message = "Spring Data @Query annotation found."
     )
