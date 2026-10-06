@@ -50,15 +50,12 @@ where
     )
 
     or
-    // JPQL queries in @Query
+    // JPQL queries in @Query - performance test
     exists(Annotation q, StringLiteral queryLiteral |
       isQuery(q) and
       queryLiteral = q.getValue("value") and
-      usesOldEntity(queryLiteral, oldEntity) and
       usageLoc = q.getTarget().getLocation() and
-      message =
-        "Query uses old entity name '" + oldEntity.getName() +
-        "' which will be renamed to '" + newName + "'."
+      message = "Spring Data @Query annotation found."
     )
 
     or
