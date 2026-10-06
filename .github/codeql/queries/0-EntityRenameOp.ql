@@ -41,6 +41,7 @@ where
     exists(Annotation q, StringLiteral queryLiteral |
       isQuery(q) and
       queryLiteral = q.getValue("value") and
+      usesOldEntity(queryLiteral, oldEntity) and
       usageLoc = q.getTarget().getLocation() and
       message = "Spring Data @Query annotation found."
     )
