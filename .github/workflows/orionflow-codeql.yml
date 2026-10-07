@@ -87,3 +87,9 @@ jobs:
         with:
           category: "/language:java-kotlin-orionflow"
           output: results.sarif
+      - name: Preserve SARIF
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: orionflow-sarif-${{ github.run_id }}
+          path: results.sarif/
