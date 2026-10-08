@@ -1,0 +1,54 @@
+// Experimental annotation-mapped subgraph for OrionFlow evaluation.
+// Source: modelum/openmrs-core
+// This is not intended to be a full reverse-engineered OpenMRS schema.
+
+Schema OpenMRS:1
+
+Root entity Patient { +patientId: Integer }
+Root entity VisitType { +visitTypeId: Integer }
+Root entity Concept { +conceptId: Integer }
+Root entity Location { +locationId: Integer }
+Root entity EncounterType { +encounterTypeId: Integer }
+
+Root entity Visit
+{
+  +visitId: Integer,
+  startDatetime: Timestamp,
+  stopDatetime: Timestamp,
+  patient: ref<Patient as Integer>&,
+  visitType: ref<VisitType as Integer>&,
+  indication: ref<Concept as Integer>?,
+  location: ref<Location as Integer>?
+}
+
+Root entity Encounter
+{
+  +encounterId: Integer,
+  encounterDatetime: Timestamp,
+  patient: ref<Patient as Integer>&,
+  location: ref<Location as Integer>?,
+  encounterType: ref<EncounterType as Integer>&,
+  visit: ref<Visit as Integer>?
+}
+
+Root entity Diagnosis
+{
+  +diagnosisId: Integer,
+  rank: Integer,
+  encounter: ref<Encounter as Integer>&,
+  patient: ref<Patient as Integer>&
+}
+
+Root entity OrderType
+{
+  +orderTypeId: Integer,
+  javaClassName: String
+}
+
+Root entity ConceptClass { +conceptClassId: Integer }
+
+Relationship order_type_class_map
+{
+  order_type_id: ref<OrderType as Integer>&,
+  concept_class_id: ref<ConceptClass as Integer>&
+}
