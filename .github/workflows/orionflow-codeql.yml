@@ -59,6 +59,7 @@ jobs:
                -jar .github/codeql/generator.jar \
                -i "${{ steps.extract_file.outputs.script }}" \
                -o .github/codeql/queries
+               -f jpa
 
       - name: Commit generated queries
         if: steps.extract_file.outputs.run == 'true'
