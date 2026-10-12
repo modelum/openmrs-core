@@ -1,0 +1,5 @@
+J_OMRS_RR_01_openmrs_rename_order_type_class_map_relationship operations
+
+USING OpenMRS:1
+
+RENAME RELATIONSHIP order_type_class_map TO order_type_concept_class

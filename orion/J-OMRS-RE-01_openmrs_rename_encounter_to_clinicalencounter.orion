@@ -1,0 +1,5 @@
+J_OMRS_RE_01_openmrs_rename_encounter_to_clinicalencounter operations
+
+USING OpenMRS:1
+
+RENAME ENTITY Encounter TO ClinicalEncounter

@@ -1,0 +1,5 @@
+J_OMRS_DF_01_openmrs_delete_visit_indication operations
+
+USING OpenMRS:1
+
+DELETE Visit::indication
