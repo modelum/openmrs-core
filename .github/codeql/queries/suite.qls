@@ -1,2 +1,2 @@
-- description: J_OMRS_DR_01_openmrs_delete_order_type_class_map_relationship-query-suite
+- description: J_OMRS_RE_01_openmrs_rename_encounter_to_clinicalencounter-query-suite
 - queries: .

@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-dr-01-openmrs-delete-order-type-class-map-relationship-queries
+name: j-omrs-re-01-openmrs-rename-encounter-to-clinicalencounter-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
