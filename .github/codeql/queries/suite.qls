@@ -1,2 +1,2 @@
-- description: J_OMRS_DF_01_openmrs_delete_visit_indication-query-suite
+- description: J_OMRS_DR_01_openmrs_delete_order_type_class_map_relationship-query-suite
 - queries: .

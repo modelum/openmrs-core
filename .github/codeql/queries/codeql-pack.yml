@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-df-01-openmrs-delete-visit-indication-queries
+name: j-omrs-dr-01-openmrs-delete-order-type-class-map-relationship-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
