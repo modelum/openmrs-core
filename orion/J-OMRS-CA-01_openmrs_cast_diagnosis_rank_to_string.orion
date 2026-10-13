@@ -3,3 +3,4 @@ J_OMRS_CA_01_openmrs_cast_diagnosis_rank_to_string operations
 USING OpenMRS:1
 
 CAST ATTR Diagnosis::rank TO String
+
