@@ -1,2 +1,2 @@
-- description: OpenMRS_rename_visit-query-suite
+- description: J_OMRS_CA_01_openmrs_cast_diagnosis_rank_to_string-query-suite
 - queries: .
