@@ -3,3 +3,4 @@ J_OMRS_DE_01_openmrs_delete_visittype operations
 USING OpenMRS:1
 
 DELETE ENTITY VisitType
+
