@@ -1,2 +1,2 @@
-- description: J_OMRS_RF_01_openmrs_rename_visit_stopdatetime-query-suite
+- description: J_OMRS_RR_01_openmrs_rename_order_type_class_map_relationship-query-suite
 - queries: .
