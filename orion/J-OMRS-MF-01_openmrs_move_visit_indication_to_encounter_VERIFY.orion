@@ -3,3 +3,4 @@ J_OMRS_MF_01_openmrs_move_visit_indication_to_encounter_VERIFY operations
 USING OpenMRS:1
 
 MOVE Visit::indication TO Encounter::indication WHERE visitId = visit
+
