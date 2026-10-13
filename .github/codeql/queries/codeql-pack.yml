@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-ca-01-openmrs-cast-diagnosis-rank-to-string-queries
+name: j-omrs-de-01-openmrs-delete-visittype-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
