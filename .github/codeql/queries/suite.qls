@@ -1,2 +1,2 @@
-- description: J_OMRS_CR_01_openmrs_cast_visit_location_reference_VERIFY-query-suite
+- description: J_OMRS_MF_01_openmrs_move_visit_indication_to_encounter_VERIFY-query-suite
 - queries: .

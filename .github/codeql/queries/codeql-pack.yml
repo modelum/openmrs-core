@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-cr-01-openmrs-cast-visit-location-reference-verify-queries
+name: j-omrs-mf-01-openmrs-move-visit-indication-to-encounter-verify-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
