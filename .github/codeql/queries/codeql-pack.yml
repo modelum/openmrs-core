@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-mf-01-openmrs-move-visit-indication-to-encounter-verify-queries
+name: j-omrs-pa-01-openmrs-promote-encounter-datetime-verify-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
