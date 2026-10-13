@@ -3,3 +3,4 @@ J_OMRS_PA_01_openmrs_promote_encounter_datetime_VERIFY operations
 USING OpenMRS:1
 
 PROMOTE ATTR Encounter::encounterDatetime
+
