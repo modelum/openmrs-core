@@ -1,5 +1,5 @@
 # This is an automatically generated file.
-name: j-omrs-rr-01-openmrs-rename-order-type-class-map-relationship-queries
+name: j-omrs-cr-01-openmrs-cast-visit-location-reference-verify-queries
 version: 0.0.0
 dependencies:
   codeql/java-all: "*"
