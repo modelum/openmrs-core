@@ -1,0 +1,5 @@
+J_OMRS_CR_01_openmrs_cast_visit_location_reference_VERIFY operations
+
+USING OpenMRS:1
+
+CAST REF Visit::location TO String
