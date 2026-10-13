@@ -3,3 +3,4 @@ J_OMRS_RF_01_openmrs_rename_visit_stopdatetime operations
 USING OpenMRS:1
 
 RENAME Visit::stopDatetime TO endDatetime
+
